@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
+  # before_action :authenticate, except: [:index, :show]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
@@ -68,6 +68,8 @@ class ContactsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #hide contacts rather than delete them
 
   private
     # Use callbacks to share common setup or constraints between actions.

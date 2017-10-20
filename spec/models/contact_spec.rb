@@ -22,6 +22,7 @@ describe Contact do
     expect(contact.errors[:email]).to include("can't be blank")
   end
   it "is invalid with a duplicate email address" do
+    Contact.destroy_all
     create(:contact, email: "shey@gmail.com")
     contact = build(:contact, email: 'shey@gmail.com')
     contact.valid?
